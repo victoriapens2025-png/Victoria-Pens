@@ -1,0 +1,49 @@
+/* css/responsive.css */
+
+@media(max-width:1100px){
+
+  .featured-grid,
+  .service-grid,
+  .quote-grid,
+  .gallery-preview{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero h1{
+    font-size:72px;
+  }
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .section-heading h2{
+    font-size:42px;
+  }
+
+  .featured-grid,
+  .service-grid,
+  .quote-grid,
+  .gallery-preview{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .contact-box{
+    padding:50px 30px;
+  }
+
+  .contact-box h2{
+    font-size:42px;
+  }
+}

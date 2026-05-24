@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Custom Nib Request | Victoria Pens</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+  <div class="grain"></div>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+      Victoria Pens
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="configurator.html">Services Provided</a>
+      <a href="library.html">Reference Library</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="configurator-hero">
+
+    <img src="assets/images/hero-placeholder1.jpeg" alt="">
+
+    <div class="overlay"></div>
+
+    <div class="configurator-hero-content">
+
+      <span>Bespoke Commission</span>
+
+      <h1>
+        Build Your Perfect Writing Experience
+      </h1>
+
+      <p>
+        Select materials, services, and grind profiles to begin your handcrafted nib commission.
+      </p>
+
+      <a href="#configurator-start" class="btn-primary">
+        Begin Configuration
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- CONFIGURATOR -->
+
+  <section class="section" id="configurator-start">
+
+    <div class="section-heading">
+
+      <span>Interactive Configurator</span>
+
+      <h2>
+        Craft Your Nib
+      </h2>
+
+    </div>
+
+    <div class="configurator-container">
+
+      <!-- LEFT SIDE -->
+
+      <div class="configurator-left">
+
+        <!-- STEP 1 -->
+
+        <div class="config-block">
+
+          <div class="config-title">
+
+            <span>Step 01</span>
+
+            <h3>
+              Pen Information
+            </h3>
+
+          </div>
+
+          <div class="luxury-inputs">
+
+            <input
+              type="text"
+              id="penBrand"
+              placeholder="Pen Brand"
+            >
+
+            <input
+              type="text"
+              id="penModel"
+              placeholder="Pen Model"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+
+        <div class="config-block">
+
+          <div class="config-title">
+
+            <span>Step 02</span>
+
+            <h3>
+              Nib Material
+            </h3>
+
+          </div>
+
+          <div class="material-grid">
+
+            <div class="material-card option-card"
+              data-material="modern-steel">
+
+              <h4>Modern Steel</h4>
+
+              <p>
+                Reliable contemporary steel nibs optimized for durability and smoothness.
+              </p>
+
+            </div>
+
+            <div class="material-card option-card"
+              data-material="modern-gold">
+
+              <h4>Modern Gold</h4>
+
+              <p>
+                Softer tactile response with luxurious flow and expressive feel.
+              </p>
+
+            </div>
+
+            <div class="material-card option-card"
+              data-material="vintage-steel">
+
+              <h4>Vintage Steel</h4>
+
+              <p>
+                Historic steel nibs requiring careful restoration and tuning.
+              </p>
+
+            </div>
+
+            <div class="material-card option-card"
+              data-material="vintage-gold">
+
+              <h4>Vintage Gold</h4>
+
+              <p>
+                Collector-grade vintage gold nibs with exceptional personality.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- STEP 03 -->
+
+        <div class="config-block">
+
+          <div class="config-title">
+
+            <span>Step 03</span>
+
+            <h3>
+              Service Selection
+            </h3>
+
+          </div>
+
+          <!-- =========================
+               TIER 1
+          ========================= -->
+
+          <div class="service-tier">
+
+            <div class="service-tier-header">
+              
+              <h4>
+                Tier 1
+              </h4>
+              <span><br></span>
+              <span>Essential Writing Optimization</span>
+
+
+
+            </div>
+
+            <div class="service-grid-modern tier-two-grid">
+
+              <!-- PRECISION TUNING -->
+
+              <div class="service-mini-card option-card"
+                data-service="Precision Tuning"
+                data-modern-steel="500"
+                data-modern-gold="750"
+                data-vintage-steel="750"
+                data-vintage-gold="850">
+
+                <h4>Precision Tuning</h4>
+
+                <p>
+                  Smoothening, wetness adjustment & feedback tuning.
+                </p>
+
+                <span>
+                  Starting from ₹500
+                </span>
+
+              </div>
+
+              <!-- ALIGNMENT -->
+
+              <div class="service-mini-card option-card"
+                data-service="Alignment Service"
+                data-modern-steel="500"
+                data-modern-gold="750"
+                data-vintage-steel="750"
+                data-vintage-gold="850">
+
+                <h4>Alignment Service</h4>
+
+                <p>
+                  Tine alignment & reverse writing optimization.
+                </p>
+
+                <span>
+                  Starting from ₹500
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- =========================
+               TIER 2
+          ========================= -->
+
+          <div class="service-tier">
+
+            <div class="service-tier-header">
+              <h4>
+                Tier 2
+              </h4>
+              <span><br></span>
+              <span>Standard Grind Services</span>
+
+
+
+            </div>
+
+            <div class="service-grid-modern">
+
+              <!-- BASIC GRIND -->
+
+              <div class="service-mini-card option-card"
+                data-service="Basic Grind"
+                data-modern-steel="1100"
+                data-modern-gold="1350"
+                data-vintage-steel="1350"
+                data-vintage-gold="1450">
+
+                <h4>Basic Grind</h4>
+
+                <p>
+                  Stub, italic, monoline & size reduction.
+                </p>
+
+                <span>
+                  Starting from ₹1100
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- =========================
+               TIER 3
+          ========================= -->
+
+          <div class="service-tier">
+
+            <div class="service-tier-header">
+
+              <h4>
+                Tier 3
+              </h4>
+              <span><br></span>
+              <span>Advanced Specialty Profiles</span>
+
+
+            </div>
+
+            <div class="service-grid-modern">
+
+              <!-- ADVANCED GRIND -->
+
+              <div class="service-mini-card option-card"
+                data-service="Advanced Grind"
+                data-modern-steel="1300"
+                data-modern-gold="1550"
+                data-vintage-steel="1550"
+                data-vintage-gold="1650">
+
+                <h4>Advanced Grind</h4>
+
+                <p>
+                  Architect, zoom, oblique & specialty profiles.
+                </p>
+
+                <span>
+                  Starting from ₹1300
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- =========================
+               TIER 4
+          ========================= -->
+
+          <div class="service-tier">
+
+            <div class="service-tier-header">
+              <h4>
+                Tier 4
+              </h4>
+              <span><br></span>
+              <span>Restoration & Collector Services</span>
+
+
+
+            </div>
+
+            <div class="service-grid-modern">
+
+              <!-- VINTAGE RESTORATION -->
+
+              <div class="service-mini-card contact-only option-card"
+                data-service="Vintage Restoration">
+
+                <h4>Vintage Restoration</h4>
+
+                <p>
+                  Collector-grade restoration and historical nib repair work.
+                </p>
+
+                <span>
+                  Contact Required
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- =========================
+               TIER 5
+          ========================= -->
+
+          <div class="service-tier">
+
+            <div class="service-tier-header">
+
+              <h4>Tier 5</h4>
+           <span><br></span>
+              <span>
+                Expressive Flex Optimization
+              </span>
+   
+
+            </div>
+
+            <div class="service-grid-modern">
+
+              <!-- SEMI FLEX -->
+
+              <div class="service-mini-card contact-only option-card"
+                data-service="Semi Flex Modes">
+
+                <h4>Semi Flex Modes</h4>
+
+                <p>
+                  Flex tuning and expressive writing optimization.
+                </p>
+
+                <span>
+                  Reach Out For Evaluation
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+
+      <div class="configurator-sidebar">
+
+        <div class="summary-card">
+
+          <span>Commission Summary</span>
+
+          <h2>
+            Estimated Investment
+          </h2>
+
+          <div class="summary-price">
+
+            <span id="livePrice">0</span>
+
+          </div>
+
+          <div class="summary-details">
+
+            <div class="summary-item">
+
+              <label>Material</label>
+
+              <p id="selectedMaterial">
+                Not Selected
+              </p>
+
+            </div>
+
+            <div class="summary-item">
+
+              <label>Services</label>
+
+              <p id="selectedService">
+                Not Selected
+              </p>
+
+            </div>
+
+          </div>
+
+          <button
+            class="btn-primary summary-btn"
+            type="button"
+          >
+            Submit Commission Request
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONFIGURATOR SCRIPT -->
+
+  <script src="js/configurator.js"></script>
+
+  <!-- EMAILJS -->
+
+  <script type="module">
+
+    import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/+esm';
+
+    emailjs.init({
+      publicKey: "fQglZNsfHlOQoG1vR",
+    });
+
+    const submitBtn =
+      document.querySelector(".summary-btn");
+
+    submitBtn.addEventListener("click", () => {
+
+      const penBrand =
+        document.getElementById("penBrand").value;
+
+      const penModel =
+        document.getElementById("penModel").value;
+
+      const material =
+        document.getElementById("selectedMaterial").innerText;
+
+      const service =
+        document.getElementById("selectedService").innerText;
+
+      const price =
+        document.getElementById("livePrice").innerText;
+
+      if (
+        penBrand === "" ||
+        penModel === "" ||
+        material === "Not Selected" ||
+        service === "Not Selected"
+      ) {
+
+        alert("Please complete the configurator.");
+
+        return;
+
+      }
+
+      submitBtn.innerText = "Sending...";
+
+      emailjs.send(
+        "service_f3wm0ls",
+        "template_hxd37qa",
+        {
+
+          pen_brand: penBrand,
+
+          pen_model: penModel,
+
+          material: material,
+
+          service: service,
+
+          estimated_price: price
+
+        }
+
+      )
+
+      .then(() => {
+
+        alert("Commission request sent successfully!");
+
+        submitBtn.innerText =
+          "Submit Commission Request";
+
+      })
+
+      .catch((error) => {
+
+        console.error(error);
+
+        alert("Failed to send commission request.");
+
+        submitBtn.innerText =
+          "Submit Commission Request";
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

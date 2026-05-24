@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Victoria Pens</title>
+
+  <link rel="stylesheet"
+        href="css/contact.css">
+
+</head>
+
+<body>
+
+  <!-- GRAIN -->
+
+  <div class="grain"></div>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+      Victoria Pens
+    </a>
+
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="configurator.html">
+        Services Provided
+      </a>
+
+      <a href="library.html">
+        Reference Library
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="contact-hero">
+
+    <img src="assets/images/contact-hero.jpg"
+         alt="Contact Hero">
+
+    <div class="contact-overlay"></div>
+
+    <div class="contact-hero-content">
+
+      <span>
+        Reach Out
+      </span>
+
+      <h1>
+        Begin Your
+        Writing Journey
+      </h1>
+
+      <p>
+        Whether you seek precision tuning,
+        vintage restoration, custom grinds,
+        or guidance for your collection,
+        we would be delighted to hear from you.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section">
+
+    <div class="contact-grid">
+
+      <!-- FORM -->
+
+      <div class="contact-form-card">
+
+        <span>
+          Inquiry Form
+        </span>
+
+        <h2>
+          Send A Message
+        </h2>
+
+        <form class="contact-form"
+              id="contactForm">
+
+          <input type="text"
+                 name="name"
+                 placeholder="Your Name"
+                 required>
+
+          <input type="email"
+                 name="email"
+                 placeholder="Your Email"
+                 required>
+
+          <input type="text"
+                 name="subject"
+                 placeholder="Subject">
+
+          <textarea name="message"
+                    placeholder="Tell us about your pen, nib, or request..."
+                    required></textarea>
+
+          <button type="submit"
+                  class="contact-btn">
+
+            Send Inquiry
+
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- INFO -->
+
+      <div class="contact-info">
+
+        <div class="info-card">
+
+  <span>
+    Email
+  </span>
+
+  <h3>
+    Direct Contact
+  </h3>
+
+  <p>
+    <a href="mailto:Victoria.pens2025@gmail.com">
+      Victoria.pens2025@gmail.com
+    </a>
+  </p>
+
+</div>
+
+<a href="https://www.instagram.com/victoria_pens" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   class="info-card">
+
+  <span>
+    Instagram
+  </span>
+
+  <h3>
+    Visual Archive
+  </h3>
+
+  <p>
+    @victoria_pens
+  </p>
+
+</a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Victoria Pens.
+    Crafted with precision and artistry.
+
+  </footer>
+
+  <!-- EMAILJS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+
+    emailjs.init("fQglZNsfHlOQoG1vR");
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_q9xbg8k",
+        "template_vjgktka",
+        this
+      )
+
+      .then(() => {
+
+        alert("Message sent successfully.");
+
+        contactForm.reset();
+
+      })
+
+      .catch((error) => {
+
+        console.error(error);
+
+        alert("Failed to send message.");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

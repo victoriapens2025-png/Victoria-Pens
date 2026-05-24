@@ -1,0 +1,525 @@
+/* ========================================
+   LUXURY CINEMATIC GALLERY CSS
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ========================================
+   ROOT
+======================================== */
+
+:root{
+  --bg:#090909;
+  --bg2:#141414;
+  --gold:#c8a46a;
+  --gold-soft:#e0c28e;
+  --text:#f1ece4;
+  --muted:#b8b1a8;
+  --border:rgba(255,255,255,.08);
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,.02),
+    transparent 30%
+  ),
+  var(--bg);
+
+  color:var(--text);
+
+  font-family:'Inter',sans-serif;
+
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ========================================
+   GRAIN
+======================================== */
+
+.grain{
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.045;
+
+  z-index:999;
+
+  background-image:
+  url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:100;
+
+  padding:26px 7%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(0,0,0,.22);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:38px;
+
+  color:var(--gold);
+
+  font-family:'Cormorant Garamond',serif;
+
+  letter-spacing:.5px;
+}
+
+nav{
+  display:flex;
+
+  gap:36px;
+}
+
+nav a{
+  position:relative;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  transition:.35s;
+}
+
+nav a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:1px;
+
+  background:var(--gold);
+
+  transition:.35s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.gallery-hero{
+  position:relative;
+
+  height:78vh;
+
+  overflow:hidden;
+}
+
+.gallery-hero img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transform:scale(1.08);
+
+  filter:brightness(.72);
+}
+
+.gallery-overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.88)
+  );
+}
+
+.gallery-hero-content{
+  position:absolute;
+
+  top:50%;
+  left:8%;
+
+  transform:translateY(-50%);
+
+  max-width:860px;
+
+  z-index:5;
+}
+
+.gallery-hero-content span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:5px;
+
+  font-size:12px;
+}
+
+.gallery-hero-content h1{
+  font-size:120px;
+
+  line-height:.88;
+
+  margin:28px 0;
+
+  font-family:'Cormorant Garamond',serif;
+
+  text-shadow:
+  0 10px 40px rgba(0,0,0,.45);
+}
+
+.gallery-hero-content p{
+  color:var(--muted);
+
+  font-size:19px;
+
+  line-height:2;
+
+  max-width:700px;
+}
+
+/* ========================================
+   SECTION
+======================================== */
+
+.gallery-section{
+  padding:140px 7%;
+}
+
+/* ========================================
+   TITLE
+======================================== */
+
+.gallery-heading{
+  margin-bottom:90px;
+
+  text-align:center;
+}
+
+.gallery-heading span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:5px;
+
+  font-size:12px;
+}
+
+.gallery-heading h2{
+  margin-top:16px;
+
+  font-size:82px;
+
+  line-height:.92;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.gallery-heading p{
+  color:var(--muted);
+
+  max-width:700px;
+
+  margin:26px auto 0;
+
+  line-height:1.9;
+}
+
+/* ========================================
+   MASONRY GRID
+======================================== */
+
+.masonry-grid{
+  columns:3;
+
+  column-gap:28px;
+}
+
+/* ========================================
+   GALLERY CARD
+======================================== */
+
+.masonry-item{
+  position:relative;
+
+  break-inside:avoid;
+
+  margin-bottom:28px;
+
+  overflow:hidden;
+
+  border-radius:26px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:#111;
+
+  cursor:pointer;
+
+  transition:.55s ease;
+}
+
+.masonry-item::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(200,164,106,.22),
+    transparent 45%
+  );
+
+  opacity:0;
+
+  transition:.55s;
+
+  z-index:2;
+}
+
+.masonry-item:hover::before{
+  opacity:1;
+}
+
+.masonry-item:hover{
+  transform:
+  translateY(-12px)
+  scale(1.01);
+
+  border-color:
+  rgba(200,164,106,.55);
+
+  box-shadow:
+  0 25px 70px rgba(0,0,0,.45),
+  0 0 40px rgba(200,164,106,.08);
+}
+
+.masonry-item img{
+  width:100%;
+
+  transition:1s ease;
+
+  filter:brightness(.94);
+}
+
+.masonry-item:hover img{
+  transform:scale(1.08);
+
+  filter:brightness(1);
+}
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.masonry-item::after{
+  content:"View Piece";
+
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.15)
+  );
+
+  opacity:0;
+
+  transition:.45s;
+
+  z-index:3;
+}
+
+.masonry-item:hover::after{
+  opacity:1;
+}
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+
+.lightbox{
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.94);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.45s ease;
+
+  z-index:9999;
+
+  backdrop-filter:blur(12px);
+}
+
+.lightbox.active{
+  opacity:1;
+
+  pointer-events:auto;
+}
+
+.lightbox img{
+  width:auto;
+
+  max-width:88%;
+
+  max-height:88%;
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 40px 120px rgba(0,0,0,.65);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+  padding:50px 8%;
+
+  border-top:1px solid rgba(255,255,255,.06);
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:1200px){
+
+  .gallery-hero-content h1{
+    font-size:92px;
+  }
+
+  .gallery-heading h2{
+    font-size:62px;
+  }
+
+}
+
+@media(max-width:1000px){
+
+  .masonry-grid{
+    columns:2;
+  }
+
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+  .gallery-hero{
+    height:62vh;
+  }
+
+  .gallery-hero-content h1{
+    font-size:56px;
+  }
+
+  .gallery-heading h2{
+    font-size:42px;
+  }
+
+  .masonry-grid{
+    columns:1;
+  }
+
+}

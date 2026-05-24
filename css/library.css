@@ -1,0 +1,425 @@
+/* ========================================
+   STANDALONE LIBRARY CSS
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ========================================
+   ROOT
+======================================== */
+
+:root{
+  --bg:#090909;
+  --bg2:#141414;
+  --gold:#c8a46a;
+  --gold-soft:#e0c28e;
+  --text:#f1ece4;
+  --muted:#b8b1a8;
+  --border:rgba(255,255,255,.08);
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,.02),
+    transparent 30%
+  ),
+  var(--bg);
+
+  color:var(--text);
+
+  font-family:'Inter',sans-serif;
+
+  overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ========================================
+   GRAIN
+======================================== */
+
+.grain{
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.045;
+
+  z-index:999;
+
+  background-image:
+  url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+
+.navbar{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:100;
+
+  padding:26px 7%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(0,0,0,.22);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:38px;
+
+  color:var(--gold);
+
+  font-family:'Cormorant Garamond',serif;
+
+  letter-spacing:.5px;
+}
+
+nav{
+  display:flex;
+
+  gap:36px;
+}
+
+nav a{
+  position:relative;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:2px;
+
+  transition:.35s;
+}
+
+nav a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:1px;
+
+  background:var(--gold);
+
+  transition:.35s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.library-hero{
+  position:relative;
+
+  height:72vh;
+
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 8%;
+}
+
+.library-hero::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.88)
+  );
+
+  z-index:1;
+}
+
+.library-hero-content{
+  position:relative;
+
+  z-index:2;
+
+  max-width:760px;
+}
+
+.library-hero-content span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:5px;
+
+  font-size:12px;
+}
+
+.library-hero-content h1{
+  font-size:110px;
+
+  line-height:.9;
+
+  margin:26px 0;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.library-hero-content p{
+  color:var(--muted);
+
+  font-size:18px;
+
+  line-height:2;
+
+  max-width:650px;
+}
+
+/* ========================================
+   SECTION
+======================================== */
+
+.library-section{
+  padding:140px 7%;
+}
+
+/* ========================================
+   GRID
+======================================== */
+
+.library-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(340px,1fr));
+
+  gap:34px;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.library-card{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:28px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.01)
+  );
+
+  transition:.5s ease;
+}
+
+.library-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(200,164,106,.18),
+    transparent 45%
+  );
+
+  opacity:0;
+
+  transition:.5s;
+
+  z-index:1;
+}
+
+.library-card:hover::before{
+  opacity:1;
+}
+
+.library-card:hover{
+  transform:
+  translateY(-12px)
+  scale(1.01);
+
+  border-color:
+  rgba(200,164,106,.45);
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.4);
+}
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.library-image{
+  overflow:hidden;
+
+  height:320px;
+}
+
+.library-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:1s ease;
+}
+
+.library-card:hover .library-image img{
+  transform:scale(1.08);
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.library-content{
+  position:relative;
+
+  z-index:2;
+
+  padding:32px;
+}
+
+.library-content span{
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:3px;
+
+  font-size:11px;
+}
+
+.library-content h3{
+  margin:16px 0;
+
+  font-size:42px;
+
+  line-height:1;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.library-content p{
+  color:var(--muted);
+
+  line-height:1.9;
+
+  margin-bottom:28px;
+}
+
+/* ========================================
+   TAGS
+======================================== */
+
+.library-tags{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.library-tags div{
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.03);
+
+  color:var(--gold);
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  font-size:10px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+  .library-hero{
+    height:60vh;
+  }
+
+  .library-hero-content h1{
+    font-size:58px;
+  }
+
+  .library-grid{
+    grid-template-columns:1fr;
+  }
+
+}
