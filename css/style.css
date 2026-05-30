@@ -97,6 +97,8 @@ textarea{
   border-bottom:1px solid rgba(255,255,255,.05);
 }
 
+
+
 .logo{
   font-size:38px;
 
@@ -481,20 +483,80 @@ nav a:hover::after{
 ======================================== */
 
 .gallery-preview{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  /* horizontal looping carousel container */
+  overflow:hidden;
+  position:relative;
+  padding:36px;
+  border-radius:10px;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--border);
 }
 
 .gallery-preview img{
-  height:340px;
+  height:260px;
   object-fit:cover;
-
   transition:.45s;
 }
 
 .gallery-preview img:hover{
   transform:scale(1.03);
+}
+
+/* Carousel internals */
+.carousel-slider{
+  display:flex;
+  width:auto;
+  align-items:center;
+  animation-name:carousel-scroll;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  animation-duration:20s; /* will be tuned by JS */
+  will-change:transform;
+  backface-visibility:hidden;
+  transform-style:preserve-3d;
+  transform:translate3d(0,0,0);
+}
+
+.carousel-track{
+  display:flex;
+}
+
+@keyframes carousel-scroll{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(var(--scroll-end)); }
+}
+
+.gallery-preview:hover .carousel-slider{
+  animation-play-state:paused;
+}
+
+/* Clients' Voices padding (was missing) */
+.voices{
+  padding:120px 8%;
+}
+
+/* Social grid section padding so gallery-preview sits nicely */
+.social-grid{
+  padding:120px 8%;
+}
+
+/* make gallery images look nicer */
+.gallery-preview img{
+  border-radius:8px;
+  box-shadow:0 8px 30px rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.03);
+}
+
+/* Ensure carousel images don't shrink and have consistent spacing */
+.carousel-track img{
+  margin-right:18px;
+  flex:0 0 auto;
+  display:block;
+  width:auto;
+  height:260px;
+  object-fit:cover;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* ========================================
@@ -630,10 +692,7 @@ footer{
   font-size:15px;
 }
 
-.contact-form textarea{
-  min-height:220px;
-  resize:none;
-}
+
 
 .contact-form input:focus,
 .contact-form textarea:focus{
@@ -1084,4 +1143,82 @@ footer{
     font-size:38px;
   }
 
+}
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.hamburger{
+  display:none;
+  width:48px;
+  height:48px;
+  border:none;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  border-radius:14px;
+  cursor:pointer;
+  z-index:1001;
+}
+
+.hamburger span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--text);
+  margin:5px auto;
+  transition:.35s ease;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:block;
+  }
+
+  nav{
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:320px;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+
+    background:rgba(8,8,8,.97);
+
+    backdrop-filter:blur(30px);
+
+    transition:.45s ease;
+
+    z-index:1000;
+  }
+
+  nav.active{
+    right:0;
+  }
+
+  nav a{
+    font-size:16px;
+    letter-spacing:3px;
+  }
 }
