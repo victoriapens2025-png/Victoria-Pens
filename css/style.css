@@ -1251,3 +1251,25 @@ footer{
     display:block;
   }
 }
+@media(max-width:768px){
+
+  *{
+    max-width:100%;
+  }
+
+  .featured-grid,
+  .service-grid,
+  .quote-grid{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+
+  .featured-card,
+  .service-card,
+  .quote-card{
+    width:100%;
+  }
+
+}
+
