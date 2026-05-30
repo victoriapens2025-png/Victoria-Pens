@@ -1083,7 +1083,7 @@ footer{
   .material-grid,
   .tier-two-grid,
   .luxury-inputs{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr !important;
   }
 
   .masonry-grid{
@@ -1131,6 +1131,19 @@ footer{
   .contact-box{
     padding:50px 30px;
   }
+.featured-card,
+.service-card{
+  width:100%;
+  min-width:0;
+}
+
+.card-content{
+  padding:24px;
+}
+
+.card-content h3{
+  font-size:32px;
+}
 
 }
 
