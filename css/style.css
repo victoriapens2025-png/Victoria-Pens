@@ -32,6 +32,8 @@
 
 html{
   scroll-behavior:smooth;
+  width:100%;
+  overflow-x:hidden;
 }
 
 body{
@@ -39,6 +41,8 @@ body{
   color:var(--text);
   font-family:'Inter',sans-serif;
   overflow-x:hidden;
+  width:100%;
+  max-width:100%;
 }
 
 img{
@@ -1135,7 +1139,13 @@ footer{
   .hero-content,
   .configurator-hero-content{
     left:5%;
+    width:90%;
     max-width:90%;
+  }
+
+  .navbar{
+    padding-left:5%;
+    padding-right:5%;
   }
 
   .hero-content h1,
@@ -1144,6 +1154,10 @@ footer{
   }
 
 }
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
 /* =========================
    MOBILE NAVIGATION
 ========================= */
@@ -1158,7 +1172,7 @@ footer{
   backdrop-filter:blur(20px);
   border-radius:14px;
   cursor:pointer;
-  z-index:1001;
+  z-index:1002;
 }
 
 .hamburger span{
@@ -1190,35 +1204,37 @@ footer{
 
   nav{
     position:fixed;
-
     top:0;
-    right:-100%;
+    right:0;
 
     width:320px;
     height:100vh;
 
-    display:flex;
+    display:flex !important;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 
-    gap:30px;
+    gap:28px;
 
-    background:rgba(8,8,8,.97);
-
+    background:rgba(10,10,10,.97);
     backdrop-filter:blur(30px);
 
+    transform:translateX(100%);
     transition:.45s ease;
 
-    z-index:1000;
+    z-index:1001;
   }
 
   nav.active{
-    right:0;
+    transform:translateX(0);
   }
 
   nav a{
+    color:var(--text) !important;
     font-size:16px;
     letter-spacing:3px;
+    text-transform:uppercase;
+    display:block;
   }
 }

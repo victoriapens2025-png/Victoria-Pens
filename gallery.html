@@ -135,37 +135,7 @@
 
   <!-- JS -->
 
-  <script>
-
-    const lightbox =
-      document.querySelector('.lightbox');
-
-    const lightboxImage =
-      document.querySelector('.lightbox img');
-
-    const galleryImages =
-      document.querySelectorAll('.masonry-item img');
-
-    galleryImages.forEach(image => {
-
-      image.addEventListener('click', () => {
-
-        lightbox.classList.add('active');
-
-        lightboxImage.src = image.src;
-
-      });
-
-    });
-
-    lightbox.addEventListener('click', () => {
-
-      lightbox.classList.remove('active');
-
-    });
-
-  </script>
-  
+  <script src="js/gallery.js"></script>
 </body>
 
 </html>
