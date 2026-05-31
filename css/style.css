@@ -1083,7 +1083,7 @@ footer{
   .material-grid,
   .tier-two-grid,
   .luxury-inputs{
-    grid-template-columns:1fr !important;
+    grid-template-columns:1fr;
   }
 
   .masonry-grid{
@@ -1131,19 +1131,6 @@ footer{
   .contact-box{
     padding:50px 30px;
   }
-.featured-card,
-.service-card{
-  width:100%;
-  min-width:0;
-}
-
-.card-content{
-  padding:24px;
-}
-
-.card-content h3{
-  font-size:32px;
-}
 
 }
 
@@ -1251,25 +1238,3 @@ footer{
     display:block;
   }
 }
-@media(max-width:768px){
-
-  *{
-    max-width:100%;
-  }
-
-  .featured-grid,
-  .service-grid,
-  .quote-grid{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-  }
-
-  .featured-card,
-  .service-card,
-  .quote-card{
-    width:100%;
-  }
-
-}
-
