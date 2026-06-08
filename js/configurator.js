@@ -1,7 +1,9 @@
 /* =========================
    CONFIGURATOR INTERACTION
 ========================= */
-
+const customerEmail =
+  document.getElementById('customerEmail');
+  
 const materialCards =
   document.querySelectorAll('.material-card');
 
@@ -16,6 +18,8 @@ const selectedMaterialText =
 
 const selectedServiceText =
   document.getElementById('selectedService');
+
+
 
 /* =========================
    STATE
@@ -59,33 +63,25 @@ serviceCards.forEach(card => {
 
   card.addEventListener('click', () => {
 
-    // CHECK IF TIER 1 CARD
-
     const isTierOne =
       card.closest('.tier-two-grid');
 
-    // =========================
-    // TIER 1 = MULTI SELECT
-    // =========================
+    /* =========================
+       TIER 1 = MULTI SELECT
+    ========================= */
 
-    if(isTierOne){
+    if (isTierOne) {
 
       card.classList.toggle('selected');
 
-      // REMOVE
-
-      if(selectedServices.includes(card)){
+      if (selectedServices.includes(card)) {
 
         selectedServices =
           selectedServices.filter(
             service => service !== card
           );
 
-      }
-
-      // ADD
-
-      else{
+      } else {
 
         selectedServices.push(card);
 
@@ -93,22 +89,18 @@ serviceCards.forEach(card => {
 
     }
 
-    // =========================
-    // OTHER TIERS = SINGLE SELECT
-    // =========================
+    /* =========================
+       OTHER TIERS = SINGLE SELECT
+    ========================= */
 
-    else{
-
-      // REMOVE OTHER NON-TIER1 SERVICES
+    else {
 
       serviceCards.forEach(otherCard => {
 
         const otherIsTierOne =
           otherCard.closest('.tier-two-grid');
 
-        // ONLY RESET NON TIER1
-
-        if(!otherIsTierOne){
+        if (!otherIsTierOne) {
 
           otherCard.classList.remove('selected');
 
@@ -121,11 +113,9 @@ serviceCards.forEach(card => {
 
       });
 
-      // ADD CURRENT
-
       card.classList.add('selected');
 
-      if(!selectedServices.includes(card)){
+      if (!selectedServices.includes(card)) {
 
         selectedServices.push(card);
 
@@ -145,14 +135,13 @@ serviceCards.forEach(card => {
    UPDATE PRICE
 ========================= */
 
-function updatePrice(){
+function updatePrice() {
 
-  // NO MATERIAL SELECTED
+  if (!selectedMaterial) {
 
-  if(!selectedMaterial){
+    livePrice.innerHTML =
+      "<span class='small-price-text'>Select Material</span>";
 
-livePrice.innerHTML =
-  "<span class='small-price-text'>Select Material</span>";
     return;
 
   }
@@ -165,7 +154,7 @@ livePrice.innerHTML =
 
     let price = 0;
 
-    switch(selectedMaterial){
+    switch (selectedMaterial) {
 
       case "modern-steel":
 
@@ -199,7 +188,7 @@ livePrice.innerHTML =
 
     price = Number(price);
 
-    if(price > 0){
+    if (price > 0) {
 
       hasPricedService = true;
 
@@ -209,20 +198,18 @@ livePrice.innerHTML =
 
   });
 
-  // CONTACT ONLY SERVICES
+  if (!hasPricedService &&
+      selectedServices.length > 0) {
 
-  if(!hasPricedService && selectedServices.length > 0){
-
-livePrice.innerHTML =
-  "<span class='small-price-text'>Reach Out To Us</span>";
+    livePrice.innerHTML =
+      "<span class='small-price-text'>Reach Out To Us</span>";
 
     return;
 
   }
 
-  // NORMAL PRICE
-
-  livePrice.innerText = total;
+  livePrice.innerText =
+    total.toLocaleString("en-IN");
 
 }
 
@@ -230,9 +217,9 @@ livePrice.innerHTML =
    UPDATE SERVICE TEXT
 ========================= */
 
-function updateServiceText(){
+function updateServiceText() {
 
-  if(selectedServices.length === 0){
+  if (selectedServices.length === 0) {
 
     selectedServiceText.innerText =
       "Not Selected";
@@ -255,9 +242,9 @@ function updateServiceText(){
    FORMAT MATERIAL LABEL
 ========================= */
 
-function formatMaterial(material){
+function formatMaterial(material) {
 
-  switch(material){
+  switch (material) {
 
     case "modern-steel":
       return "Modern Steel";
@@ -275,5 +262,50 @@ function formatMaterial(material){
       return "Not Selected";
 
   }
+
+}
+
+/* =========================
+   EMAIL VALIDATION
+========================= */
+
+function isValidEmail(email) {
+
+  const regex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  return regex.test(email);
+
+}
+
+/* =========================
+   FORM VALIDATION
+========================= */
+
+function validateConfigurator() {
+
+  if (!customerEmail) {
+
+    return true;
+
+  }
+
+  if (customerEmail.value.trim() === "") {
+
+    alert("Please enter your email address.");
+
+    return false;
+
+  }
+
+  if (!isValidEmail(customerEmail.value.trim())) {
+
+    alert("Please enter a valid email address.");
+
+    return false;
+
+  }
+
+  return true;
 
 }
