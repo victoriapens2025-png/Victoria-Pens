@@ -71,4 +71,14 @@
   .configurator-hero-content h1{
     font-size:38px;
   }
+
+  .hero-popover{
+    top:14%;
+    right:5%;
+    padding:12px 14px 10px;
+  }
+
+  .hero-popover strong{
+    font-size:24px;
+  }
 }
