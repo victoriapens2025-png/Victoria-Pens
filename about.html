@@ -1,67 +1,87 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>About</title>
-
+  <title>About Victoria Pens | The Artisan Story</title>
+  <meta name="description" content="Learn about the artisan philosophy behind Victoria Pens: precise fountain pen nib modifications shaped around the way each person writes.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="canonical" href="https://victoriapens.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Victoria Pens">
+  <meta property="og:title" content="About Victoria Pens | The Artisan Story">
+  <meta property="og:description" content="Learn about the artisan philosophy behind Victoria Pens: precise fountain pen nib modifications shaped around the way each person writes.">
+  <meta property="og:url" content="https://victoriapens.com/about.html">
+  <meta property="og:image" content="https://victoriapens.com/assets/images/Samir_ringlight.jpeg">
+  <meta property="og:image:alt" content="Hands carefully working on a fountain pen nib under a ring light">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Victoria Pens | The Artisan Story">
+  <meta name="twitter:description" content="Learn about the artisan philosophy behind Victoria Pens: precise fountain pen nib modifications shaped around the way each person writes.">
+  <meta name="twitter:image" content="https://victoriapens.com/assets/images/Samir_ringlight.jpeg">
+  <meta name="twitter:image:alt" content="Hands carefully working on a fountain pen nib under a ring light">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Victoria Pens",
+    "url": "https://victoriapens.com/about.html",
+    "about": { "@id": "https://victoriapens.com/#organization" }
+  }
+  </script>
 </head>
-<body>
+<body class="about-page">
+  <div class="grain"></div>
 
-<header class="navbar">
-    <a href="index.html"
-       class="logo">
-      Victoria Pens
-    </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="configurator.html">Services Provided</a>
-    <a href="library.html">Reference Library</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-      <button class="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-</header>
+  <header class="navbar">
+    <a href="index.html" class="logo">Victoria Pens</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="configurator.html">Services Provided</a>
+      <a href="library.html">Reference Library</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="hamburger" type="button" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
-<section class="philosophy" style="padding-top:220px;">
+  <main>
+    <section class="about-story">
+      <div class="about-story-inner">
+        <div class="about-story-copy">
+          <span>The Artisan Story</span>
+          <h1>Introduced to this niche world through trial &amp; error.</h1>
 
-  <div class="philosophy-content">
+          <p>My journey began with repairing and restoring old and broken pens</p>
 
-    <span>The Artisan Story</span>
+          <p>
+            Along the years, I encountered a bunch of minor injuries that constantly changed the way I write.
+            Some time around 2023, I started experimenting with my own pens' nibs.
+          </p>
 
-    <h2>Introduced to this niche world through trial & error.</h2>
+          <p>
+            <strong>Nib modification, to me, is very precise work, albeit minute. The way it changes a pen's nature is magical.</strong>
+          </p>
 
-    <p style="font-size: 26px;">
-      My journey began with repairing and restoring old and broken pens
-    </p>
+          <p>The philosophy remains simple: Make your pen fit <strong>YOU</strong>.</p>
+        </div>
 
-    <p style="font-size: 26px;">
-      Along the years, I encountered a bunch of minor injuries that constantly changed the way I write.
-      Some time around 2023, I started experimenting with my own pens' nibs.
-    </p>
-
-    <p style="font-size: 26px;">
-      <strong>Nib modification, to me, is very precise work, albeit minute. The way it changes a pen's nature is magical.</strong>
-    </p>
-
-    <p style="font-size: 26px;">
-      The philosophy remains simple: Make your pen fit <strong>YOU</strong>.
-    </p>
-
-  </div>
-
-</section>
-</section>
+        <figure class="about-story-portrait">
+          <img
+            src="assets/images/Samir_ringlight.jpeg"
+            alt="Hands carefully working on a fountain pen nib under a ring light"
+          >
+        </figure>
+      </div>
+    </section>
+  </main>
 
   <script src="js/main.js"></script>
-
 </body>
 </html>
